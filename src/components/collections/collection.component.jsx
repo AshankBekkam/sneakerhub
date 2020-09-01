@@ -1,10 +1,17 @@
-import React from 'react';
+import React from "react";
+import { CollectionItem } from "../collection_item/collectionItem.component";
 
-export const CollectionList = ({title,items})=>(
-    <div>
-    <h1>{title}</h1>
-    {items.filter((item,index)=>index<=4).map(item=><h2>{item.name}</h2>)}
-    </div>
-)
+import './collection.component.scss'
+export const CollectionList = ({ title, items }) => (
+  <div className = 'collection-list'>
+    <h1 className="title">{title}</h1>
 
-export default CollectionList
+    <div className = 'preview'>{items
+      .filter((item, index) => index <= 4)
+      .map(({ id, ...otherItemProps }) => (
+        <CollectionItem id={id} {...otherItemProps} />
+      ))}</div>
+  </div>
+);
+
+export default CollectionList;

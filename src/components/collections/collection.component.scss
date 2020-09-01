@@ -1,0 +1,15 @@
+.collection-list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    .preview{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .title{
+        margin: 30px; 
+        
+    }
+}
